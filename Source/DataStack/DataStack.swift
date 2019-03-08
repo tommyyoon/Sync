@@ -500,7 +500,8 @@ extension FileManager {
         if TestCheck.isTesting {
             return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
         } else {
-            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+//             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+            return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier:"group.WhenMoon")!
         }
         #endif
     }
